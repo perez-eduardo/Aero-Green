@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AeroGreen FBO | Super Bowl Week Planning</title>
+    <meta name="description" content="Simple aircraft matching and FBO planning for Super Bowl week." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="enhancements.css" />
+    <link rel="stylesheet" href="portal-selector.css" />
+    <link rel="stylesheet" href="simple-ui.css" />
+    <link rel="stylesheet" href="customer-chat.css" />
+    <link rel="stylesheet" href="scenario-visual.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="AeroGreen FBO home">
+          <span class="brand-mark">✈</span>
+          <span><strong>AeroGreen</strong><small>FBO planning</small></span>
+        </a>
+        <div class="event-pill"><span class="pulse"></span> Super Bowl week · Los Angeles</div>
+        <div class="top-actions"><select id="portal-select" class="top-portal-select" aria-label="Choose workspace"><option value="customer">Customer portal</option><option value="staff">FBO team</option></select><button class="icon-button" id="notifications-button" aria-label="Notifications">◌</button></div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Super Bowl aviation planning</p>
+            <h1><span><b class="initial-letter">P</b>lan Smarter</span><em><b class="initial-letter">F</b>ly Smoother</em></h1>
+            <p class="hero-text">Tell us about the aircraft and timing. AeroGreen suggests the best VNY plan for the event.</p>
+            <div class="hero-stats">
+              <div><strong>1</strong><span>primary FBO</span></div>
+              <div><strong>3</strong><span>airport options</span></div>
+              <div><strong>7</strong><span>planning days</span></div>
+            </div>
+          </div>
+          <div class="hero-graphic" aria-label="Premium 3D-rendered heavy business jet on a Los Angeles private aviation ramp">
+            <div class="hero-visual">
+              <img src="assets/heavy-business-jet-transparent.png" alt="Transparent heavy business jet cutout" />
+              <div class="hero-visual-caption"><span class="live-dot"></span><span>Ramp status</span><strong>Planning mode</strong></div>
+            </div>
+          </div>
+        </section>
+        <div class="focus-ribbon"><span>Simple planning</span><strong>Heavy jets</strong><i>→</i><strong>VNY first</strong><i>→</i><strong>LAX / ONT if needed</strong><small>Planning suggestion · FBO staff approve</small></div>
+
+
+        <section id="customer-portal" class="portal-panel active-panel">
+          <div class="section-heading"><div><p class="eyebrow">Customer portal</p><h2>Request a VNY slot.</h2></div><span class="step-count">01 <i>of</i> 03</span></div>
+          <div class="customer-layout">
+            <form id="match-form" class="card form-card">
+              <div class="card-heading"><div><span class="number-badge">01</span><div><h3>Flight details</h3><p>Enter the basics so we can suggest a plan.</p></div></div><span class="required">Required</span></div>
+              <div class="form-section-label">Aircraft & flight details</div>
+              <div class="form-grid">
+                <label>Aircraft group<div class="locked-field">Heavy business jet <span>VNY focus</span></div><input id="aircraft-size" type="hidden" value="heavy" /><small>Primary examples: Gulfstream G650 and Global 7500</small></label>
+                <label>Aircraft type or model<input id="aircraft-model" placeholder="e.g., Gulfstream G650" /></label>
+                <label>Aircraft registration<input id="registration" placeholder="e.g., N123AB" /></label>
+                <label>Dimensions / parking needs<input id="parking-needs" placeholder="e.g., 105 ft span · hangar preferred" /></label>
+                <label>Arrival date<input id="arrival-date" type="date" required value="2026-02-05" /></label>
+                <label>Arrival time<input id="arrival-time" type="time" required value="14:30" /></label>
+                <label>Departure date<input id="departure-date" type="date" required value="2026-02-09" /></label>
+                <label>Departure time<input id="departure-time" type="time" required value="20:30" /></label>
+                <label>Passengers<input id="passengers" type="number" min="1" max="100" value="10" required /></label>
+                <label>Crew members<input id="crew" type="number" min="0" max="30" value="3" /></label>
+                <label>Flight type<select id="flight-type"><option>Domestic</option><option>International</option></select></label>
+                <label>Operation type<select id="operation-type"><option value="overnight">Overnight stay</option><option value="touch-and-go">Touch-and-go / limited services</option><option value="drop-off">Passenger drop-off and depart</option></select></label>
+              </div>
+              <div class="form-section-label">Essential service needs</div>
+              <div class="form-grid">
+                <label>Fuel requirements<select id="fuel-requirements"><option>Standard refuel</option><option>Full fuel load</option><option>Minimum fuel / quick turn</option><option>Fuel planning assistance</option></select></label>
+                <label>Security / privacy<select id="security-request"><option>Standard privacy</option><option>Private terminal handling</option><option>VIP security coordination</option><option>High privacy / limited disclosure</option></select></label>
+                <label>Budget range<select id="budget"><option>$5,000–$10,000</option><option>$10,000–$25,000</option><option>$25,000–$50,000</option><option>Flexible budget</option></select></label>
+              </div>
+              <details class="optional-preferences"><summary>Additional preferences <span>Optional</span></summary><div class="form-grid">
+                <label>Catering preferences<select id="catering"><option>No catering</option><option>Standard catering</option><option>VIP / dietary-specific catering</option><option>Custom catering request</option></select></label>
+                <label>Transportation<select id="transportation"><option>Private SUV transfer</option><option>Executive van</option><option>Motorcade / security transport</option><option>No transportation needed</option></select></label>
+                <label>Hotel or accommodation<select id="hotel"><option>No hotel needed</option><option>4-star hotel near venue</option><option>Luxury hotel near venue</option><option>Hotel for crew and guests</option></select></label>
+                <label>Accessibility needs<select id="accessibility"><option>None</option><option>Wheelchair assistance</option><option>Mobility assistance</option><option>Other accessibility request</option></select></label>
+                <label>VIP status<select id="vip-status"><option>Standard guest</option><option>VIP guest</option><option>Team / executive guest</option><option>Government or high-security guest</option></select></label>
+              </div></details>
+              <button class="primary-button" type="submit">Match my aircraft <span>→</span></button>
+              <p class="form-note">Your request is a planning inquiry. A qualified FBO representative must confirm availability and approve the reservation.</p>
+            </form>
+
+            <aside class="card chatbot-card" id="chatbot-card">
+              <div class="chatbot-heading"><div class="chatbot-avatar"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><div><h3>AeroGreen assistant</h3><p>Ask about your VNY request.</p></div><span class="chat-online">Online</span></div>              <div class="chat-messages" id="chat-messages"><div class="chat-bubble bot">Hi! I can explain the request form, Sunday capacity, fees, or the FBO approval process.</div></div>
+              <form class="chat-form" id="chat-form"><input id="chat-input" placeholder="Ask a question" aria-label="Ask AeroGreen a question" /><button type="submit" aria-label="Send message">→</button></form>
+              <p class="chat-note">Planning guidance only. A qualified FBO representative makes the final decision.</p>
+            </aside>
+            <button class="chat-toggle" id="chat-toggle" type="button" aria-expanded="false" aria-controls="chatbot-card"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><small>Chat</small></button>          </div>
+          <div id="match-results" class="results-section hidden"></div>
+          <div id="customer-live" class="card live-card hidden">
+            <div class="card-heading"><div><span class="number-badge">04</span><div><h3>Turnaround status</h3><p>Your timeline updates as the FBO team confirms each service.</p></div></div><span class="live-status"><span class="live-dot"></span> Monitoring</span></div>
+            <div class="request-relay-bar"><div><span>Request ID</span><strong id="live-request-id">Not submitted</strong></div><div><span>Contact path</span><strong>AeroGreen → FBO review → customer</strong></div><div><span>Booking status</span><strong id="live-booking-status">Request received</strong></div></div>
+            <div class="live-summary"><div><span>Aircraft status</span><strong id="live-aircraft-status">Request received</strong></div><div><span>Estimated departure</span><strong id="live-departure">Sun · 20:30</strong></div><div><span>Turnaround estimate</span><strong>2h 10m</strong></div><div><span>Next responsible team</span><strong>FBO operations</strong></div></div>
+            <div class="timeline"><div class="timeline-item complete"><span>✓</span><div><strong>Request received</strong><small>Aircraft and guest details are saved.</small></div><time>Now</time></div><div class="timeline-item active"><span>02</span><div><strong>FBO review</strong><small>Availability, pricing, safety, and capacity are being confirmed.</small></div><time>In progress</time></div><div class="timeline-item"><span>03</span><div><strong>Services scheduled</strong><small>Fuel, escort, catering, luggage, and transportation.</small></div><time>Pending</time></div><div class="timeline-item"><span>04</span><div><strong>Aircraft prepared for departure</strong><small>Final turnaround estimate will be updated by staff.</small></div><time>Pending</time></div></div>
+            <div class="updates-box"><strong>Customer updates</strong><p>Messages stay inside the AeroGreen request relay until an FBO representative completes the required checks. No direct booking or movement authority is granted automatically.</p><button class="secondary-button" id="customer-message-button">Send message to FBO team →</button></div>
+          </div>
+        </section>
+
+        <section id="staff-portal" class="portal-panel">
+          <div class="section-heading"><div><p class="eyebrow">FBO team</p><h2>Plan the ramp.</h2></div><div class="manager-status"><span class="status-dot"></span> Manager review open</div></div>
+          <div class="dashboard-grid">
+            <div class="metric-card"><span>Event arrivals</span><strong>120</strong><small class="up">↑ 243% vs ordinary week</small></div>
+            <div class="metric-card"><span>Primary parking</span><strong>27 <i>/ 30</i></strong><small class="warning">3 slots remaining</small></div>
+            <div class="metric-card"><span>Overflow plan</span><strong>18 <i>/ 25</i></strong><small class="good">Partner capacity available</small></div>
+            <div class="metric-card"><span>Sunday departures</span><strong>34</strong><small class="warning">Post-game surge</small></div>
+          </div>
+          <div class="baseline-strip" aria-label="Ordinary week baseline compared with Super Bowl week forecast">
+            <div><span>Ordinary-week baseline</span><strong>35 arrivals</strong><small>Modeled reference week</small></div>
+            <div><span>Super Bowl forecast</span><strong id="baseline-demand">120 arrivals</strong><small id="baseline-demand-note">Medium-demand case</small></div>
+            <div><span>Change</span><strong id="baseline-change">+243%</strong><small>Compared with baseline</small></div>
+          </div>
+          <div class="staff-layout">
+            <div class="card request-card">
+              <div class="card-heading"><div><span class="number-badge">02</span><div><h3>Reservation requests</h3><p>Prioritized by aircraft fit, timing, and resource pressure.</p></div></div><div class="filter-menu" id="request-filter-menu"><button class="filter-button" id="request-filter-toggle" type="button" aria-expanded="false">All requests⌄</button><div class="filter-options" id="request-filter-options" hidden><button type="button" data-filter="All requests">All requests</button><button type="button" data-filter="Needs review">Needs review</button><button type="button" data-filter="Approved">Approved</button><button type="button" data-filter="Pending">Pending</button></div></div></div>
+              <div class="request-table-wrap"><table class="request-table"><thead><tr><th>Request</th><th>Aircraft</th><th>Recommended airport</th><th>Arrival</th><th>Status</th></tr></thead><tbody id="request-rows"><tr><td><strong>REQ-1048</strong><small>VIP handling</small></td><td>Heavy jet<small>G650 · 12 pax</small></td><td><strong>VNY</strong><small>Primary FBO</small></td><td>Thu 02/05<small>14:30–15:00</small></td><td><span class="status-chip review">Review</span></td></tr><tr><td><strong>REQ-1047</strong><small>Touch-and-go</small></td><td>Heavy jet<small>Global 7500 · 10 pax</small></td><td><strong>LAX</strong><small>Approved backup</small></td><td>Wed 02/04<small>10:00–10:30</small></td><td><span class="status-chip approved">Approved</span></td></tr><tr><td><strong>REQ-1046</strong><small>Hangar request</small></td><td>Heavy jet<small>G650 · 14 pax</small></td><td><strong>ONT</strong><small>Approved backup</small></td><td>Tue 02/03<small>18:00–19:00</small></td><td><span class="status-chip pending">Pending</span></td></tr></tbody></table></div>
+              <div class="table-footer"><span id="request-count">Showing 3 of 18 requests</span><button class="text-button" id="view-all-requests">View all requests →</button></div>
+            </div>
+          </div>
+          <div class="integration-grid">
+            <div class="card integration-card">
+              <div class="card-heading"><div><span class="number-badge">04</span><div><h3>Request relay</h3><p>Review the customer request before any reservation is confirmed.</p></div></div><span class="integration-pill">FBO controlled</span></div>
+              <div class="relay-flow"><div><span>01</span><strong>Customer submits</strong><small>Aircraft, timing, and service needs</small></div><i>→</i><div><span>02</span><strong>FBO verifies</strong><small>Fit, capacity, PPR, fees, and staffing</small></div><i>→</i><div><span>03</span><strong>Human approves</strong><small>Confirmation or backup recommendation</small></div></div>
+              <div class="staff-request-detail"><div><span>Active request</span><strong id="staff-active-request">Waiting for a customer request</strong></div><div><span>Review state</span><strong id="staff-request-status">No request submitted</strong></div><div><span>Recommended airport</span><strong id="staff-request-airport">VNY · primary FBO</strong></div></div>
+              <div class="staff-action-row"><button class="secondary-button" id="staff-request-info">Request more information</button><button class="approve-button compact-button" id="staff-approve-request">Approve for final confirmation <span>✓</span></button></div>
+              <p class="approval-note" id="staff-request-note">The FBO keeps final authority. These demo actions update the customer-facing request status.</p>
+            </div>
+          </div>
+          <div class="card allocation-card"><div class="card-heading"><div><span class="number-badge">03</span><div><h3>VNY primary plan and approved backups</h3><p>Only heavy business-jet options in the selected Super Bowl-week network.</p></div></div><span class="map-legend"><i class="legend-dot close"></i> Primary <i class="legend-dot overflow"></i> Backup</span></div><div class="airport-grid" id="airport-grid"></div></div>
+          <div class="card fee-card"><div class="card-heading"><div><span class="number-badge">05</span><div><h3>Fee model</h3><p>Published airport rates plus FBO items that still need a quote.</p></div></div><span class="evidence-tag">FY2026–27 research</span></div><div class="fee-grid"><article><span>VNY · primary</span><strong>$6.44 / 1,000 lb MLW</strong><p>Landing fee billed on arrival; touch-and-go billed. Example VNY FBO rates: large-aircraft ramp $850, facility $70, security $50, quiet-hour $250, Jet-A $9.08/gal.</p><a href="https://www.iflyvny.com/airport-facts/vny-landing-fees" target="_blank" rel="noreferrer">VNY landing fees →</a><a href="https://www.claylacy.com/contact-us/locations/van-nuys-airport-los-angeles-kvny/" target="_blank" rel="noreferrer">VNY FBO example rates →</a></article><article><span>LAX · backup</span><strong>$7.85 / 1,000 lb MLW</strong><p>Landing fee billed on arrival; touch-and-go billed. FBO handling, parking, hangar, fuel, security, and event terms are separate.</p><a href="https://www.lawa.org/groups-and-divisions/operations-and-emergency-management/airport-and-ground-transportation-permits/airfield-permits/air-carrier-operating-permit/general-aviation-fees-lax" target="_blank" rel="noreferrer">LAWA LAX fee page →</a></article><article><span>ONT · backup</span><strong>$2.11 / 1,000 lb MGLW</strong><p>FY2026–27 non-signatory landing rate over 25,000 lb. Public parking is $0.81 / 1,000 lb / 24 hours when not on FBO leasehold.</p><a href="https://www.flyontario.com/sites/default/files/2026-06/2026-0625_agenda_packet_-_public_0.pdf" target="_blank" rel="noreferrer">ONT FY2026–27 rates →</a></article><article><span>Event period</span><strong>Quote required</strong><p>No official Super Bowl LXI event surcharge is published yet. Keep a line item for PPR/slot administration, premium handling, overflow positioning, minimum fuel, or after-hours service.</p><a href="https://www.faa.gov/newsroom/super-bowl-lvi-flight-requirements-ga-pilots" target="_blank" rel="noreferrer">Past FAA event procedures →</a></article></div><p class="evidence-note">Example airport landing fees for a G650 at 83,500 lb MLW: VNY ≈ $538, LAX ≈ $655, ONT ≈ $176. Asterisks use published airport/FBO examples; daggers are demo allowances pending an operator quote.</p></div>
+          <div class="operations-lower-grid">
+            <div class="card scenario-card"><div class="card-heading"><div><h3>Scenario planner</h3><p>Compare Super Bowl demand levels before committing resources.</p></div><select id="scenario-select"><option value="low">Low demand</option><option value="medium" selected>Medium demand</option><option value="high">High demand</option></select></div><div class="scenario-metrics"><div><span>Arrivals</span><strong id="scenario-arrivals">120</strong></div><div><span>Parking use</span><strong id="scenario-parking">90%</strong></div><div><span>Extra staff</span><strong id="scenario-staff">4</strong></div><div><span>Projected net</span><strong id="scenario-net">$184k</strong></div></div><div class="scenario-visual"><div class="visual-head"><strong>Seven-day demand curve</strong><span id="visual-label">Medium demand · Sunday peak</span></div><div class="demand-chart" id="demand-chart"></div><div class="chart-axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div><div class="capacity-alert"><span>!</span><div><strong>Plan adjustment</strong><p id="scenario-alert">Protect six VNY stands for the Sunday evening departure window and use backups only when needed.</p></div></div></div>
+          </div>
+        </section>
+      </main>
+      <div class="modal hidden" id="site-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button class="modal-close" id="modal-close" aria-label="Close">×</button><p class="eyebrow" id="modal-eyebrow">AeroGreen</p><h3 id="modal-title">Update</h3><div id="modal-content"></div><button class="primary-button modal-action" id="modal-action">Done <span>✓</span></button></div></div>
+      <footer><span>✈ AeroGreen FBO</span><span>Planning guidance · Qualified staff decide</span><span>Prototype for NCBAA hackathon</span></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

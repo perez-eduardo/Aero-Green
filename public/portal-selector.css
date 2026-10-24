@@ -1,0 +1,2 @@
+.top-portal-select{border:1px solid var(--line);background:var(--box);border-radius:7px;color:var(--text);padding:8px 10px;font:11px inherit;cursor:pointer;min-width:145px}.top-portal-select.attention{border-color:var(--warm);box-shadow:0 0 0 3px rgba(240,201,135,.35)}@media(max-width:600px){.top-portal-select{min-width:120px;font-size:10px}}
+.top-portal-select option{background:#81a969;color:#ebded4}

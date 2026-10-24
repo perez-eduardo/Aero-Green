@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+
+/* ============================================================
+   SIMPLE UI + TYPOGRAPHY LAYER
+   Fontlar: basliklar Fraunces (serif), metin DM Sans
+   ============================================================ */
+:root{--serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'DM Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;--radius:20px}
+body{font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.airport-code,.metric-card strong,.brand strong,.baseline-strip strong,.modal-metrics strong{font-family:var(--serif);font-optical-sizing:auto}
+button,input,select{font-family:var(--sans)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Ust bar ---------- */
+.topbar{padding:14px 5%;min-height:72px}
+.brand small{display:none}
+.brand strong{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.brand-mark{border-radius:12px;width:38px;height:38px}
+.event-pill{font-size:12.5px;font-weight:500;letter-spacing:.01em;padding:9px 18px}
+.demo-badge{font-size:11px}
+.top-portal-select{font-size:13px;padding:10px 14px;border-radius:12px}
+
+/* ---------- Hero ---------- */
+.hero{padding:56px 5% 52px;gap:48px;min-height:0}
+.hero-copy{max-width:600px}
+.eyebrow{font-size:11.5px;letter-spacing:.2em;font-weight:700;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,5.4vw,70px);font-weight:500;line-height:1.02;letter-spacing:-.025em;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero-text{max-width:500px;font-size:17px;line-height:1.65;opacity:.92}
+.hero-stats{margin-top:20px}
+.hero-visual{border-radius:28px}
+.hero-visual-caption{font-size:12px;padding:9px 14px}
+
+/* ---------- Ribbon / secici ---------- */
+.focus-ribbon{margin:22px 5% 8px;padding:14px 20px;gap:12px;border-radius:16px;font-size:13px}
+.focus-ribbon>span{font-size:10.5px;padding:6px 11px}
+.focus-ribbon small{font-size:11.5px}
+.portal-selector{margin:14px 5% 24px}
+
+/* ---------- Basliklar ---------- */
+.portal-panel{padding-top:20px}
+.section-heading{margin-bottom:26px}
+.section-heading .eyebrow{font-size:11.5px;margin-bottom:10px}
+.section-heading h2{font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);font-weight:500;letter-spacing:-.02em;line-height:1.08}
+.step-count{font-size:13px}
+.manager-status{font-size:13px;padding:10px 16px}
+
+/* ---------- Kartlar ---------- */
+.card{border-radius:var(--radius);box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 14px 34px rgba(20,40,16,.14)}
+.form-card,.request-card,.recommendation-card,.allocation-card,.integration-card,.scenario-card,.privacy-card,.evidence-card,.fee-card,.live-card{padding:32px}
+.trust-card{padding:34px;box-shadow:0 14px 34px rgba(20,40,16,.14)}
+.card h3,.card-heading h3{font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:-.01em}
+.card-heading{margin-bottom:28px}
+.card-heading p{font-size:13.5px;line-height:1.55;margin-top:6px}
+.required,.integration-pill,.evidence-tag,.live-status{font-size:11.5px;padding:7px 13px}
+
+/* ---------- Form ---------- */
+.form-grid{gap:18px 18px}
+.form-grid label,label{font-size:13px;font-weight:600;letter-spacing:.005em}
+.form-grid small,label small{font-size:11.5px;line-height:1.45;margin-top:7px;opacity:.9}
+.form-section-label{font-size:11px;letter-spacing:.16em;padding-top:22px}
+input,select{font-size:14.5px;padding:13px 14px;border-radius:12px;margin-top:8px}
+.locked-field{font-size:14px;padding:13px 14px;border-radius:12px}
+.locked-field span{font-size:10px;padding:5px 10px}
+.check-row{font-size:13.5px}
+.optional-preferences summary{font-size:14px}
+.optional-preferences summary span{font-size:12px}
+.form-note{font-size:12.5px;line-height:1.55;margin-top:14px}
+
+/* ---------- Butonlar ---------- */
+.primary-button,.approve-button{font-size:15px;padding:17px 22px;border-radius:14px;font-weight:700;letter-spacing:.01em;transition:transform .15s ease,background .15s ease}
+.primary-button:hover,.approve-button:hover{transform:translateY(-1px)}
+.secondary-button{font-size:12.5px;padding:11px 16px;border-radius:10px;font-weight:700}
+.filter-button{font-size:12.5px;padding:9px 14px;border-radius:10px}
+.text-button{font-size:12.5px}
+.compact-button{font-size:12.5px;padding:11px 16px;border-radius:10px}
+
+/* ---------- Guven karti ---------- */
+.trust-card h3{font-size:28px;line-height:1.12;max-width:300px}
+.trust-card p{font-size:14px;line-height:1.65}
+.trust-list strong{font-size:13.5px}
+.trust-list small{font-size:12.5px;line-height:1.45;margin-top:4px}
+
+/* ---------- Sonuc kartlari ---------- */
+.result-banner{font-size:14px;padding:16px 20px;border-radius:14px}
+.airport-result{padding:24px;border-radius:18px}
+.airport-code{font-size:34px;font-weight:500;letter-spacing:-.01em}
+.fit-label{font-size:11px}
+.airport-result h4{font-size:16px;margin-top:10px}
+.airport-result p{font-size:13px;line-height:1.55}
+.result-reason{font-size:13px;line-height:1.55}
+.result-details small{font-size:11.5px}
+.result-details strong{font-size:13px}
+.result-disclaimer{font-size:12.5px;padding:15px 18px;border-radius:12px}
+
+/* ---------- Canli durum / timeline ---------- */
+.live-summary{border-radius:14px;padding:18px}
+.live-summary span{font-size:11.5px}
+.live-summary strong{font-size:14px}
+.timeline-item strong{font-size:13px}
+.timeline-item small{font-size:12px}
+.timeline-item time{font-size:11.5px}
+.updates-box strong{font-size:13.5px}
+.updates-box p{font-size:12.5px}
+
+/* ---------- Personel paneli ---------- */
+.metric-card{padding:24px;border-radius:var(--radius)}
+.metric-card>span{font-size:12.5px;font-weight:600}
+.metric-card strong{font-size:42px;font-weight:500;letter-spacing:-.02em;margin:10px 0 8px}
+.metric-card strong i{font-size:18px}
+.metric-card small{font-size:12.5px}
+.request-table{font-size:13px}
+.request-table th{font-size:11px;padding:14px 10px;letter-spacing:.12em}
+.request-table td{padding:18px 10px;font-size:13px}
+.request-table td strong{font-size:14px}
+.request-table td small{font-size:12px;margin-top:5px}
+.request-table tbody tr{transition:background .15s ease}
+.request-table tbody tr:hover{background:rgba(255,255,255,.08)}
+.status-chip{font-size:11px;padding:7px 11px}
+.table-footer{font-size:12.5px}
+.recommendation-card h3{font-size:28px;line-height:1.1}
+.recommendation-card>p{font-size:14px;line-height:1.65}
+.ai-label{font-size:11px}
+.recommendation-reason strong{font-size:13px}
+.recommendation-reason small{font-size:11.5px}
+.approval-note{font-size:12px!important}
+.map-legend{font-size:12px}
+.airport-mini{padding:18px;border-radius:14px}
+.airport-mini h4{font-size:24px;font-family:var(--serif);font-weight:500}
+.airport-mini p{font-size:13px}
+.airport-mini small{font-size:12px}
+.airport-mini .mini-tag{font-size:10px}
+
+/* ---------- Bilgi seritleri ---------- */
+.baseline-strip,.request-relay-bar,.flight-signal{border-radius:14px}
+.baseline-strip span,.baseline-strip small,.request-relay-bar span,.flight-signal span,.staff-request-detail span,.feed-grid span{font-size:11px}
+.baseline-strip strong{font-size:26px;font-weight:500}
+.request-relay-bar strong,.flight-signal strong,.staff-request-detail strong,.feed-grid strong{font-size:13px}
+.relay-flow strong{font-size:13px}
+.relay-flow small{font-size:12px}
+.feed-status strong{font-size:14px}
+.feed-status small,.feed-disclaimer{font-size:12px}
+.evidence-grid article,.fee-grid article{padding:18px;border-radius:14px}
+.evidence-grid article>span,.fee-grid article>span{font-size:10.5px}
+.evidence-grid strong{font-size:14.5px}
+.fee-grid strong{font-size:15px}
+.evidence-grid p,.fee-grid p{font-size:12.5px;line-height:1.55}
+.evidence-grid a,.fee-grid a{font-size:12px}
+.evidence-note{font-size:12px}
+.scope-columns span,.scope-columns small{font-size:11.5px}
+.scope-columns strong{font-size:13.5px}
+.cost-breakdown{font-size:12.5px}
+.cost-breakdown span{font-size:12px}
+
+/* ---------- Senaryo / gizlilik ---------- */
+.scenario-card select{font-size:12.5px;padding:10px 12px}
+.scenario-metrics span{font-size:11.5px}
+.scenario-metrics strong{font-size:19px;font-family:var(--serif);font-weight:500}
+.capacity-alert strong{font-size:13px}
+.capacity-alert p{font-size:12.5px}
+.privacy-card h3{font-size:26px}
+.privacy-card p{font-size:13.5px}
+.guardrail-row{font-size:11.5px}
+
+/* ---------- Modal ---------- */
+.modal-card{border-radius:22px;padding:34px}
+.modal-card h3{font-size:30px;font-weight:500}
+.modal-copy{font-size:14px}
+.modal-list strong{font-size:13px}
+.modal-list small{font-size:12px}
+.modal-metrics span{font-size:11.5px}
+.approval-log span{font-size:11px}
+.approval-log strong{font-size:13.5px}
+.approval-log small{font-size:12px}
+
+/* ---------- Footer ---------- */
+footer{font-size:12.5px;padding:24px 5%}
+footer span:first-child{font-family:var(--serif);font-size:15px}
+
+/* ---------- Yerlesim (onceki ayarlar) ---------- */
+.data-sources,.ops-snapshot{margin-left:5%;margin-right:5%}
+
+@media(max-width:700px){
+    .hero{padding:34px 5% 28px}
+    .hero-graphic{min-height:210px}
+    .focus-ribbon{display:none}
+    .portal-selector{margin-top:12px}
+    .form-grid{grid-template-columns:1fr}
+    .customer-layout{gap:16px}
+    .form-card,.request-card,.recommendation-card,.allocation-card,.integration-card,.scenario-card,.privacy-card,.evidence-card,.fee-card,.live-card,.trust-card{padding:24px}
+    .metric-card strong{font-size:34px}
+}

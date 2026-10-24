@@ -1,0 +1,7 @@
+# IDE and tool settings
+.idea/
+.openai/
+
+# OS files
+.DS_Store
+Thumbs.db
